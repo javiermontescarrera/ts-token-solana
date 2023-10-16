@@ -35,20 +35,20 @@ async function createMetadataDetails() {
         symbol: metadata.symbol,
         uri: metadata.uri,
         sellerFeeBasisPoints: percentAmount(0),
-        decimals: 9,
+        decimals: 0,
         tokenStandard: TokenStandard.Fungible,
     }).sendAndConfirm(umi)
 }
 
 async function mintToken() {
-        await mintV1(umi, {
-            mint: mint.publicKey,
-            authority: umi.identity,
-            amount: 10_000,
-            tokenOwner: umi.identity.publicKey,
-            tokenStandard: TokenStandard.Fungible,
-        }).sendAndConfirm(umi)
-    }
+    await mintV1(umi, {
+        mint: mint.publicKey,
+        authority: umi.identity,
+        amount: 10_000,
+        tokenOwner: umi.identity.publicKey,
+        tokenStandard: TokenStandard.Fungible,
+    }).sendAndConfirm(umi)
+}
 
 console.log(mint);
 console.log("Mint publicKey: ", mint.publicKey); 
@@ -61,10 +61,10 @@ createMetadataDetails().then(() => {
         symbol: metadata.symbol,
         uri: metadata.uri,
         sellerFeeBasisPoints: percentAmount(0),
-        decimals: 9,
+        decimals: 0,
     }).sendAndConfirm(umi).then(() => {
         mintToken().then(() => {
-            console.log("0.00001 PSOL (", mint.publicKey, ") minted");
+            console.log("10,000 PSOL (", mint.publicKey, ") minted");
         });
     });
 });
