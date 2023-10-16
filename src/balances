@@ -1,0 +1,20 @@
+// =============================================================================================
+curl https://api.devnet.solana.com -X POST -H "Content-Type: application/json" -d '
+  {
+    "jsonrpc": "2.0", "id": 1,
+    "method": "getTokenLargestAccounts",
+    "params": [
+      "9J1d8BQYUvYYB8scyV3AQukViZzzWTeP5TaEHAoezWUe"
+    ]
+  }
+'
+
+curl https://api.devnet.solana.com -X POST -H "Content-Type: application/json" -d '
+  {
+    "jsonrpc": "2.0", "id": 1,
+    "method": "getTokenLargestAccounts",
+    "params": [
+      "GYrNkxJyAkqord4FZ3g3rWUG5uhNKAeVgr3U3H77DNb5"
+    ]
+  }
+'
